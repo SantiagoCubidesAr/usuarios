@@ -1,6 +1,5 @@
 <div class="container">
-  <h1>Usuarios</h1>
+  <h2>Usuarios</h2>
   <users-search-bar (search)="searchUsers($event)"></users-search-bar>
-  <users-list [users]="users"></users-list>
+  <users-list [users]="users" [error]="error"></users-list>
 </div>
-

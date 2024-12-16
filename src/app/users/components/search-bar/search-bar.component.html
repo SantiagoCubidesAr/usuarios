@@ -1,6 +1,7 @@
-<div class="input-group mb-3">
+<div>
   <input type="text" class="form-control" placeholder="Buscar usuario" [(ngModel)]="searchQuery">
-  <div class="input-group-append">
-    <button class="btn btn-outline-secondary" type="button" (click)="searchUsers()">Buscar</button>
+  <div class="button-group">
+    <button class="btn" type="button" (click)="searchUsers()">Buscar</button>
+    <button class="btn" type="button" (click)="cleanUsers()">Limpiar</button>
   </div>
 </div>

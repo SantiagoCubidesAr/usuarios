@@ -13,4 +13,9 @@ export class SearchBarComponent implements OnInit {
   searchUsers(): void {
     this.search.emit(this.searchQuery);
   }
+
+  cleanUsers() {
+    this.searchQuery = '';
+    this.searchUsers();
+  }
 }

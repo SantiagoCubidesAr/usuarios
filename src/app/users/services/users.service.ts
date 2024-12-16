@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../interfaces/users.interfaces';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,10 +12,11 @@ export class UsersService {
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.apiUrl);
-  }
-
-  getUserById(id: number): Observable<User> {
-    return this.http.get<User>(`${this.apiUrl}/${id}`);
+    return this.http.get<User[]>(this.apiUrl).pipe(
+      catchError((error: any) => {
+        console.error('Error al obtener usuarios:', error);
+        return throwError(error);
+      })
+    );
   }
 }
