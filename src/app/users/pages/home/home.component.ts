@@ -27,6 +27,7 @@ export class HomePageComponent implements OnInit {
 
   searchUsers(text: string): void {
     this.text = text.toLocaleLowerCase().trim().replace(" ","");
-      this.users = this.allUsers.filter(user => user.name.toLowerCase().trim().replace(" ","").includes(this.text) || user.email.toLowerCase().trim().replace(" ","").includes(this.text) || user.address.city.toLowerCase().trim().replace(" ","").includes(this.text)).sort((a, b) => a.name.localeCompare(b.name));
+      this.users = this.allUsers.filter(user => user.name.toLowerCase().trim().replace(" ","").includes(this.text) ||
+      user.email.toLowerCase().trim().replace(" ","").includes(this.text));
   }
 }

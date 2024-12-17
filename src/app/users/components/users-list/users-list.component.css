@@ -1,14 +1,17 @@
 .users-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   grid-gap: 20px;
 }
 
 .card {
   background-color: #fff;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid #ddd;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: auto;
+  flex: 1 1 auto;
 }
 
 .card-body {
