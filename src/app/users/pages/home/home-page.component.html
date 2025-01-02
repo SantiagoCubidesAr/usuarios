@@ -1,5 +1,7 @@
 <div class="container">
-  <h2>Usuarios</h2>
   <users-search-bar (search)="searchUsers($event)"></users-search-bar>
+  <button (click)="toggleSortOrder()">
+    <img src="images/ordenar.png" alt="luis" />{{ isAscending ? 'A-Z': 'Z-A'}}
+  </button>
   <users-list [users]="users" [error]="error"></users-list>
 </div>

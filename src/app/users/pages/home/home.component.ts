@@ -13,6 +13,7 @@ export class HomePageComponent implements OnInit {
   allUsers: User[] = [];
   text = '';
   error:any;
+  isAscending: boolean = true;
 
   constructor(private usersService: UsersService) { }
   ngOnInit(): void {
@@ -29,5 +30,18 @@ export class HomePageComponent implements OnInit {
     this.text = text.toLocaleLowerCase().trim().replace(" ","");
       this.users = this.allUsers.filter(user => user.name.toLowerCase().trim().replace(" ","").includes(this.text) ||
       user.email.toLowerCase().trim().replace(" ","").includes(this.text));
+  }
+
+  toggleSortOrder(): void {
+    this.isAscending = !this.isAscending;
+    this.sortUsers();
+  }
+
+  sortUsers(): void {
+    if (this.isAscending) {
+      this.users = this.users.sort((a, b) => a.name.localeCompare(b.name));
+    } else {
+      this.users = this.users.sort((a, b) => b.name.localeCompare(a.name));
+    }
   }
 }

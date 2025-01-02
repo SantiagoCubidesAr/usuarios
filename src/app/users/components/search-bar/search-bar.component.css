@@ -1,37 +1,6 @@
-.input-group {
-  margin-bottom: 20px;
-}
-
 .form-control {
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
-  margin-bottom: 5px;
-}
-
-.btn {
-  padding: 6px 6px;
-  font-size: 16px;
-  background-color: #4CAF50;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-bottom: 5px;
-}
-
-.btn:hover {
-  background-color: #3e8e41;
-}
-
-.button-group {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.button-group .btn {
-  margin-right: 10px;
-}
-.button-group .btn:last-child {
-  background-color: #FF9800; /* Cambia el color del segundo botón */
+  margin-bottom: 10px;
 }
